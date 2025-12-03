@@ -45,7 +45,7 @@
         /* scale: calc(
         var(--scale, 33) - ((var(--reveal) / 100) * (var(--scale, 33) - 1))
         ); */
-        scale: var(--scale, 600);
+        scale: var(--scale, 350);
         /* transform-origin: calc(var(--x, 39) * 1%) calc(var(--y, 50) * 1%); */
         animation: shrink both ease-out;
         animation-timeline: --buffer;
