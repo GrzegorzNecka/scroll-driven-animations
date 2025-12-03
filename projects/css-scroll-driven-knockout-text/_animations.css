@@ -1,0 +1,141 @@
+@layer animation {
+    :root {
+        timeline-scope: --buffer, --outro;
+    }
+
+    .spacer {
+        height: 100vh;
+        margin-top: 120vh;
+        view-timeline: --buffer;
+    }
+
+    video {
+        --to: 0;
+        translate: 0 50%;
+    }
+
+    body {
+    }
+
+    video,
+    header {
+        animation: lift both linear;
+        animation-timeline: scroll(root);
+        animation-range: 0 100vh;
+    }
+
+    header {
+        --to: -100%;
+        /* translate: 0 calc(0vh - (var(--reveal) * 1vh)); */
+    }
+    video {
+        --to: 0;
+        translate: 0 50%;
+        /* translate: 0 calc(50vh - (var(--reveal) * 0.5vh)); */
+    }
+
+    /* .video-mask {
+        animation: lift both ease-out;
+        animation-timeline: --buffer;
+        animation-range: entry;
+    } */
+
+    .video-mask .svg-wrap,
+    .video-mask h1 {
+        /* scale: calc(
+        var(--scale, 33) - ((var(--reveal) / 100) * (var(--scale, 33) - 1))
+        ); */
+        scale: var(--scale, 600);
+        /* transform-origin: calc(var(--x, 39) * 1%) calc(var(--y, 50) * 1%); */
+        animation: shrink both ease-out;
+        animation-timeline: --buffer;
+        animation-range: entry;
+        /* animation-range: entry 200%; */
+    }
+
+    @keyframes shrink {
+        to {
+            scale: 1;
+        }
+    }
+
+    @property --active {
+        inherits: true;
+        initial-value: 0;
+        syntax: "<number>";
+    }
+
+    .outro section:last-of-type {
+        view-timeline: --outro;
+    }
+    /* FOOTER ANIMATIONS */
+    .follow h2 span {
+        opacity: calc(0.25 + (var(--active) / 100));
+        animation: activate both
+            linear(
+                0 0%,
+                0.6832 7.89%,
+                0.9171 11.07%,
+                1.0251 12.99%,
+                1.1058 14.9%,
+                1.1619 16.86%,
+                1.1945 18.91%,
+                1.2024 20.02%,
+                1.2043 21.18%,
+                1.1907 23.72%,
+                1.1598 26.27%,
+                1.0604 32.59%,
+                1.0172 35.84%,
+                0.9839 39.49%,
+                0.967 43.26%,
+                0.9639 45.77%,
+                0.9661 48.59%,
+                0.9963 60.54%,
+                1.0054 67.42%,
+                1 100%
+            );
+        animation-timeline: --outro;
+    }
+
+    @keyframes activate {
+        to {
+            --active: 100;
+        }
+    }
+
+    .follow h2 span:first-of-type {
+        animation-range: entry 0% entry 50%;
+    }
+    .follow h2 span:last-of-type {
+        animation-range: entry 50% entry 100%;
+    }
+
+    /* .content {
+        animation: lift both ease-out;
+        animation-timeline: --buffer;
+        animation-range: entry 94% entry 102%;
+    } */
+
+    .content > div {
+        --to: 0;
+        /* opacity: calc(var(--reveal) / 100);
+        translate: 0 calc(((100 - var(--reveal)) / 100) * 0.25lh); */
+        translate: 0 0.25lh;
+        opacity: 0;
+        animation: lift both ease-out, reveal both ease-out;
+        animation-timeline: --buffer;
+        animation-range: entry 94% entry 102%;
+    }
+
+    @keyframes reveal {
+        to {
+            opacity: var(--light, 1);
+        }
+    }
+
+    @keyframes lift {
+        to {
+            translate: 0 var(--to, 0);
+        }
+    }
+}
