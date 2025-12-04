@@ -19,9 +19,9 @@
 
     video,
     header {
-        animation: lift both linear;
+        /* animation: lift both linear;
         animation-timeline: scroll(root);
-        animation-range: 0 100vh;
+        animation-range: 0 100vh; */
     }
 
     header {
@@ -45,17 +45,45 @@
         /* scale: calc(
         var(--scale, 33) - ((var(--reveal) / 100) * (var(--scale, 33) - 1))
         ); */
-        scale: var(--scale, 350);
+        /* opacity: 0; */
+        background: black;
+        scale: var(--scale, 100);
         /* transform-origin: calc(var(--x, 39) * 1%) calc(var(--y, 50) * 1%); */
-        animation: shrink both ease-out;
+        animation: shrink both linear;
+        transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
         animation-timeline: --buffer;
         animation-range: entry;
         /* animation-range: entry 200%; */
     }
 
     @keyframes shrink {
+        1% {
+            background: white;
+        }
+        10% {
+            scale: 50;
+            background: white;
+            /* opacity: 100; */
+        }
+        20% {
+            scale: 20;
+            background: white;
+        }
+        50% {
+            scale: 10;
+            background: white;
+        }
+        70% {
+            scale: 5;
+            background: white;
+        }
+        80% {
+            scale: 3;
+            background: white;
+        }
         to {
             scale: 1;
+            background: white;
         }
     }
 
