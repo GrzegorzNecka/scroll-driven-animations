@@ -7,6 +7,9 @@
         grid-template-columns: repeat(3, 1fr);
         gap: var(--gap);
         padding: var(--gap);
+        background: white;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     .column {
@@ -26,7 +29,7 @@
     }
 
     .column__item-imgwrap {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
     }
 
@@ -45,7 +48,7 @@
         display: flex;
         justify-content: space-between;
         padding: 1rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        /* background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); */
         position: absolute;
         bottom: 0;
         left: 0;
@@ -75,19 +78,18 @@
             flex-direction: column-reverse;
         }
 
-        /* Animation keyframes */
+        /* Animation keyframes - identical to reverse-scroll project */
         @keyframes adjust-position {
-            /* Start: shift column up, keep bottom edge at viewport bottom */
             from {
                 transform: translateY(calc(-100% + 100vh));
             }
-            /* End: shift column down, keep top edge at viewport top */
             to {
                 transform: translateY(calc(100% - 100vh));
             }
         }
 
-        /* Apply animation to reverse columns */
+        /* Apply animation using root scroll - this is the original approach
+           Note: animation starts from document top, so timing will differ */
         .column-reverse {
             animation: adjust-position linear forwards;
             animation-timeline: scroll(root block);
