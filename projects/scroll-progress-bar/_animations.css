@@ -1,3 +1,4 @@
+/* https://www.youtube.com/watch?v=fQSe12G5eEU&list=PLNYkxOF6rcICM3ttukz9x5LCNOHfWBVnn&index=2  */
 @layer animation {
     @supports (animation-timeline: scroll()) {
         /* Hide warning when native support */
@@ -14,6 +15,9 @@
             transform: scaleX(1);
         }
     }
+
+    /* animation-timeline - there cotnroll animation progress */
+    /* scroll(); - creates a new scroll timeline, automatically setup to track the nearest ancestor scroler in the block  direction */
 
     #progress {
         animation: grow-progress linear;

@@ -2,67 +2,6 @@
 
 @layer animation;
 
-/* ===================================
-   Page Header
-   =================================== */
-.page-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.breadcrumb {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.breadcrumb a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-    color: red;
-}
-
-.subtitle {
-    color: #666;
-    font-size: 0.95rem;
-    margin-top: 0.25rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    .page-header {
-        background: rgba(10, 10, 10, 0.95);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .page-header h1 {
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .breadcrumb a {
-        color: #a0a0a0;
-    }
-
-    .breadcrumb a:hover {
-        color: #3b82f6;
-    }
-
-    .subtitle {
-        color: #a0a0a0;
-    }
-}
-
 /** NON ESSENTIAL STYLES BELOW **/
 html {
     color-scheme: light dark;
