@@ -1,0 +1,132 @@
+@layer columns {
+    /* ===================================
+   Columns Layout
+   =================================== */
+    .columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap);
+        padding: var(--gap);
+        background: white;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    /* ===================================
+   Column Items
+   =================================== */
+    .column__item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--surface-color);
+    }
+
+    .column__item-imgwrap {
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+    }
+
+    .column__item-imgwrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .column__item:hover .column__item-imgwrap img {
+        transform: scale(1.05);
+    }
+
+    .column__item-caption {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        /* background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 0.9rem;
+    }
+
+    .column__item-caption span:first-child {
+        font-weight: 600;
+    }
+
+    .column__item-caption span:last-child {
+        color: var(--text-secondary);
+    }
+
+    /* ===================================
+   Scroll-Driven Animations
+   =================================== */
+    @supports (animation-timeline: scroll()) {
+        /* Hide overflow to prevent content bleeding during animation */
+        .columns {
+            overflow-y: hidden;
+        }
+
+        /* Flip item order in reverse columns */
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+
+        /* Animation keyframes - identical to reverse-scroll project */
+        @keyframes adjust-position {
+            from {
+                transform: translateY(calc(-100% + 100vh));
+            }
+            to {
+                transform: translateY(calc(100% - 100vh));
+            }
+        }
+
+        /* Apply animation using root scroll - this is the original approach
+           Note: animation starts from document top, so timing will differ */
+        .column-reverse {
+            animation: adjust-position linear forwards;
+            animation-timeline: scroll(root block);
+        }
+    }
+
+    /* ===================================
+   Responsive Design
+   =================================== */
+    @media (max-width: 1024px) {
+        .columns {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* On tablet, hide third column */
+        .column:nth-child(3) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .columns {
+            grid-template-columns: 1fr;
+        }
+
+        /* On mobile, show only middle column */
+        .column:nth-child(1),
+        .column:nth-child(3) {
+            display: none;
+        }
+
+        .page-header {
+            padding: 1rem;
+        }
+
+        .page-header h1 {
+            font-size: 1.5rem;
+        }
+    }
+}

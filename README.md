@@ -33,6 +33,8 @@ yarn css-scroll-driven-knockout-text
 # Lista dostępnych projektów
 yarn example-template
 yarn css-scroll-driven-knockout-text
+yarn reverse-scroll
+yarn scroll-progress-bar
 ```
 
 Każdy projekt uruchamia się na dedykowanym porcie z:
@@ -110,7 +112,9 @@ npm run add-project nazwa-projektu
 
 -   3001 - example-template
 -   3002 - css-scroll-driven-knockout-text
--   3003+ - twoje nowe projekty (automatycznie przydzielane)
+-   3003 - reverse-scroll
+-   3004 - scroll-progress-bar
+-   3005+ - twoje nowe projekty (automatycznie przydzielane)
 
 ### Krok 4: Uruchom projekt
 
@@ -207,6 +211,12 @@ yarn example-template
 
 # CSS Scroll-Driven Knockout Text (port 3002)
 yarn css-scroll-driven-knockout-text
+
+# Reverse Scroll (port 3003)
+yarn reverse-scroll
+
+# Scroll Progress Bar (port 3004)
+yarn scroll-progress-bar
 ```
 
 ### Pomysły na nowe projekty:
@@ -227,6 +237,8 @@ yarn css-scroll-driven-knockout-text
 # Uruchamianie projektów
 yarn example-template                 # Uruchom example-template (port 3001)
 yarn css-scroll-driven-knockout-text  # Uruchom knockout-text (port 3002)
+yarn reverse-scroll                   # Uruchom reverse-scroll (port 3003)
+yarn scroll-progress-bar              # Uruchom scroll-progress-bar (port 3004)
 
 # Zarządzanie projektami
 yarn add-project nazwa-projektu       # Dodaj skrypt dla nowego projektu

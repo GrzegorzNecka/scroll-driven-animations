@@ -1,0 +1,229 @@
+/* ===================================
+   CSS Reset & Variables
+   =================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #0a0a0a;
+    --surface-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --accent-color: #3b82f6;
+    --warning-bg: rgba(255, 200, 50, 0.15);
+    --warning-border: #f59e0b;
+    --gap: 1rem;
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+/* ===================================
+   Page Header
+   =================================== */
+.page-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumb {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* ===================================
+   Warning Banner
+   =================================== */
+.warning {
+    padding: 1rem 2rem;
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning-border);
+    color: #fbbf24;
+}
+
+.warning p {
+    margin: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+    .warning {
+        display: none;
+    }
+}
+
+/* ===================================
+   Columns Layout
+   =================================== */
+.columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+/* ===================================
+   Column Items
+   =================================== */
+.column__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--surface-color);
+}
+
+.column__item-imgwrap {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.column__item-imgwrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.column__item:hover .column__item-imgwrap img {
+    transform: scale(1.05);
+}
+
+.column__item-caption {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 0.9rem;
+}
+
+.column__item-caption span:first-child {
+    font-weight: 600;
+}
+
+.column__item-caption span:last-child {
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   Scroll-Driven Animations
+   =================================== */
+@supports (animation-timeline: scroll()) {
+    /* Hide overflow to prevent content bleeding during animation */
+    .columns {
+        overflow-y: hidden;
+    }
+
+    /* Flip item order in reverse columns */
+    .column-reverse {
+        flex-direction: column-reverse;
+    }
+
+    /* Animation keyframes */
+    @keyframes adjust-position {
+        /* Start: shift column up, keep bottom edge at viewport bottom */
+        from {
+            transform: translateY(calc(-100% + 100vh));
+        }
+        /* End: shift column down, keep top edge at viewport top */
+        to {
+            transform: translateY(calc(100% - 100vh));
+        }
+    }
+
+    /* Apply animation to reverse columns */
+    .column-reverse {
+        animation: adjust-position linear forwards;
+        animation-timeline: scroll(root block);
+    }
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 1024px) {
+    .columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* On tablet, hide third column */
+    .column:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+
+    /* On mobile, show only middle column */
+    .column:nth-child(1),
+    .column:nth-child(3) {
+        display: none;
+    }
+
+    .page-header {
+        padding: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -6,7 +6,9 @@
     "scripts": {
         "add-project": "node scripts/add-project.js",
         "example-template": "node scripts/run-project.js projects/example-template 3001",
-        "css-scroll-driven-knockout-text": "node scripts/run-project.js projects/css-scroll-driven-knockout-text 3002"
+        "css-scroll-driven-knockout-text": "node scripts/run-project.js projects/css-scroll-driven-knockout-text 3002",
+        "reverse-scroll": "node scripts/run-project.js projects/reverse-scroll 3003",
+        "scroll-progress-bar": "node scripts/run-project.js projects/scroll-progress-bar 3004"
     },
     "author": "",
     "license": "MIT",

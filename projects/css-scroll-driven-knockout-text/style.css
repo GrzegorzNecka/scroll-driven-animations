@@ -1,9 +1,12 @@
 @import "./_base.css";
 @import "./_animations.css";
 @import "./_demo.css";
+@import "./_columns.css";
 
-@layer base, demo, animation;
-
+@layer base, demo, animation, columns;
+html {
+    scroll-behavior: smooth;
+}
 div.tp-dfwv {
     position: fixed;
     z-index: 99999;
