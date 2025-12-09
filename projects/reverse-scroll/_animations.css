@@ -1,0 +1,32 @@
+/* ===================================
+   Scroll-Driven Animations
+   =================================== */
+@supports (animation-timeline: scroll()) {
+  /* Hide overflow to prevent content bleeding during animation */
+  .columns {
+    overflow-y: hidden;
+  }
+
+  /* Flip item order in reverse columns */
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  /* Animation keyframes */
+  @keyframes adjust-position {
+    /* Start: shift column up, keep bottom edge at viewport bottom */
+    from {
+      transform: translateY(calc(-100% + 100vh));
+    }
+    /* End: shift column down, keep top edge at viewport top */
+    to {
+      transform: translateY(calc(100% - 100vh));
+    }
+  }
+
+  /* Apply animation to reverse columns */
+  .column-reverse {
+    animation: adjust-position linear forwards;
+    animation-timeline: scroll(root block);
+  }
+}

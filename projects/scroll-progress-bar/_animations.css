@@ -1,37 +1,17 @@
-/* https://www.youtube.com/watch?v=fQSe12G5eEU&list=PLNYkxOF6rcICM3ttukz9x5LCNOHfWBVnn&index=2  */
-@layer animation {
-    @supports (animation-timeline: scroll()) {
-        /* Hide warning when native support */
-        .warning {
-            display: none;
-        }
-    }
+/* ###  Core Concepts: scroll() and ScrollTimeline | Unleash the power of Scroll-Driven Animations */
 
-    @keyframes grow-progress {
-        from {
-            transform: scaleX(0);
-        }
-        to {
-            transform: scaleX(1);
-        }
+@layer animation-scroll-progress-bar {
+  @keyframes grow-progress {
+    from {
+      transform: scaleX(0);
     }
-
-    /* animation-timeline - there cotnroll animation progress */
-    /* scroll(); - creates a new scroll timeline, automatically setup to track the nearest ancestor scroler in the block  direction */
-
-    #progress {
-        animation: grow-progress linear;
-        animation-timeline: scroll();
+    to {
+      transform: scaleX(1);
     }
+  }
 
-    #progress {
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 1em;
-        transform-origin: 0 50%;
-        background: red;
-    }
+  #progress {
+    animation: grow-progress linear;
+    animation-timeline: scroll();
+  }
 }

@@ -1,6 +1,5 @@
+/* @layer demo, meta; */
 @import "./_animations.css";
-
-/* @layer animation-scroll-progress-bar; */
 
 @supports (animation-timeline: scroll()) {
   /* Hide warning when native support */
