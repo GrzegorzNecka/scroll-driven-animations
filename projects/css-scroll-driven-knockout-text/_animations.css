@@ -1,15 +1,11 @@
 @layer animation {
-    :root {
-        timeline-scope: --buffer, --outro;
-    }
-
     .spacer {
         height: 100vh;
         margin-top: 120vh;
         view-timeline: --buffer;
     }
 
-    video {
+    /* video {
         --to: 0;
         translate: 0 50%;
     }
@@ -20,22 +16,16 @@
     video {
         --to: 0;
         translate: 0 50%;
-    }
+    } */
 
     .video-mask .svg-wrap,
     .video-mask h1 {
-        /* scale: calc(
-        var(--scale, 33) - ((var(--reveal) / 100) * (var(--scale, 33) - 1))
-        ); */
-        /* opacity: 0; */
         background-color: black;
         scale: var(--scale, 100);
-        /* transform-origin: calc(var(--x, 39) * 1%) calc(var(--y, 50) * 1%); */
         animation: shrink both linear;
         transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
         animation-timeline: --buffer;
         animation-range: entry;
-        /* animation-range: entry 200%; */
     }
 
     @keyframes shrink {
@@ -69,7 +59,7 @@
         }
     }
 
-    @property --active {
+    /* @property --active {
         inherits: true;
         initial-value: 0;
         syntax: "<number>";
@@ -77,9 +67,9 @@
 
     .outro section:last-of-type {
         view-timeline: --outro;
-    }
-    /* FOOTER ANIMATIONS */
-    .follow h2 span {
+    } */
+
+    /* .follow h2 span {
         opacity: calc(0.25 + (var(--active) / 100));
         animation: activate both
             linear(
@@ -105,31 +95,24 @@
                 1 100%
             );
         animation-timeline: --outro;
-    }
+    } */
 
-    @keyframes activate {
+    /* @keyframes activate {
         to {
             --active: 100;
         }
-    }
+    } */
 
-    .follow h2 span:first-of-type {
+    /* .follow h2 span:first-of-type {
         animation-range: entry 0% entry 50%;
     }
     .follow h2 span:last-of-type {
         animation-range: entry 50% entry 100%;
-    }
-
-    /* .content {
-        animation: lift both ease-out;
-        animation-timeline: --buffer;
-        animation-range: entry 94% entry 102%;
     } */
 
-    .content > div {
+    /* .content > div {
         --to: 0;
-        /* opacity: calc(var(--reveal) / 100);
-        translate: 0 calc(((100 - var(--reveal)) / 100) * 0.25lh); */
+
         translate: 0 0.25lh;
         opacity: 0;
         animation: lift both ease-out, reveal both ease-out;
@@ -147,5 +130,5 @@
         to {
             translate: 0 var(--to, 0);
         }
-    }
+    } */
 }
