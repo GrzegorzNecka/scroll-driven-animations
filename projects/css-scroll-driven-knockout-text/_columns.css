@@ -60,7 +60,7 @@
         }
 
         :root {
-            --sections: calc(100vh / 2);
+            --sections: calc(100vh / 3);
         }
 
         /* Animation keyframes */

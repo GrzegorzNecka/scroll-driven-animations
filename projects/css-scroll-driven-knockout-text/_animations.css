@@ -14,31 +14,13 @@
         translate: 0 50%;
     }
 
-    body {
-    }
-
-    video,
-    header {
-        /* animation: lift both linear;
-        animation-timeline: scroll(root);
-        animation-range: 0 100vh; */
-    }
-
     header {
         --to: -100%;
-        /* translate: 0 calc(0vh - (var(--reveal) * 1vh)); */
     }
     video {
         --to: 0;
         translate: 0 50%;
-        /* translate: 0 calc(50vh - (var(--reveal) * 0.5vh)); */
     }
-
-    /* .video-mask {
-        animation: lift both ease-out;
-        animation-timeline: --buffer;
-        animation-range: entry;
-    } */
 
     .video-mask .svg-wrap,
     .video-mask h1 {
