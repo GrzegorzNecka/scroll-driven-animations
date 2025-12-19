@@ -1,6 +1,6 @@
 @layer demo {
     header {
-        height: 100vh;
+        /* height: 100vh; */
         display: grid;
         inset: 0;
         align-content: center;
@@ -24,7 +24,7 @@
         color: black;
     }
 
-    /* header h1 span {
+    header h1 span {
         position: absolute;
         bottom: 100%;
         left: 50%;
@@ -34,7 +34,7 @@
         text-transform: uppercase;
         white-space: nowrap;
         color: orangered;
-    } */
+    }
 
     header h2 {
         --font-level: 1;
@@ -60,9 +60,9 @@
         --font-level: var(--font, 10);
         position: sticky;
         inset: 0;
-        height: 100vh;
+        /* height: 100vh; */
         background: white;
-        /* background-color: pink; */
+
         display: flex;
         align-items: center;
     }
@@ -85,7 +85,6 @@
     }
 
     img.video-replacement {
-        /* height: 50vh; */
         width: 100vw;
         object-fit: cover;
     }
@@ -124,11 +123,11 @@
     }
 
     .content > div {
-        --font-level: var(--font, 10);
+        /* --font-level: var(--font, 10);
         width: 5ch;
         max-width: calc(100vw - 2rem);
         margin: 0 auto;
-        padding-bottom: 25vh;
+        padding-bottom: 25vh; */
     }
 
     h2 {
@@ -150,7 +149,7 @@
     }
 
     .follow {
-        min-height: 100vh;
+        /* min-height: 100vh; */
         display: grid;
         place-items: center;
         align-content: center;
@@ -158,9 +157,9 @@
         top: 0;
     }
 
-    .outro section:last-of-type {
+    /* .outro section:last-of-type {
         height: 100vh;
-    }
+    } */
 
     .follow h2 span {
         --font-level: 6;
