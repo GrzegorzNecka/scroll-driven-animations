@@ -71,11 +71,9 @@
             }
         }
 
-        /* Apply animation to reverse columns */
-        /* Apply animation to reverse columns */
         .column-reverse {
-            /* animation: adjust-position linear forwards;
-            animation-timeline: scroll(root block); */
+            animation: adjust-position linear forwards;
+            animation-timeline: scroll(root block);
         }
     }
 

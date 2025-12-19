@@ -1,6 +1,6 @@
 @import "./_base.css";
-@import "./_animations.css";
-@import "./_demo.css";
+/* @import "./_animations.css"; */
+/* @import "./_demo.css"; */
 @import "./_columns.css";
 
 @layer base, demo, animation, columns;
