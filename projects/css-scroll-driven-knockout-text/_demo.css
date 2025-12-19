@@ -1,6 +1,7 @@
 @layer demo {
     header {
-        /* height: 100vh; */
+        background-color: pink;
+        height: 100vh;
         display: grid;
         inset: 0;
         align-content: center;

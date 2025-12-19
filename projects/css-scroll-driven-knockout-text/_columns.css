@@ -59,15 +59,19 @@
             background-color: red;
         }
 
+        :root {
+            --sections: calc(100vh / 2);
+        }
+
         /* Animation keyframes */
         @keyframes adjust-position {
             /* Start: shift column up, keep bottom edge at viewport bottom */
             from {
-                transform: translateY(calc(-100% + 100vh));
+                transform: translateY(calc(-100% + var(--sections)));
             }
             /* End: shift column down, keep top edge at viewport top */
             to {
-                transform: translateY(calc(100% - 100vh));
+                transform: translateY(calc(100% - var(--sections)));
             }
         }
 
