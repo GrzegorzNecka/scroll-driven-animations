@@ -86,7 +86,7 @@
 
   img.video-replacement {
     width: 100vw;
-    height: 110vh;
+
     object-fit: cover;
   }
 
