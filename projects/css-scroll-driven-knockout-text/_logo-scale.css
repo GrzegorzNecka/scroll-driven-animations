@@ -1,65 +1,52 @@
 @layer animation {
-    .spacer {
-        height: 100vh;
-        margin-top: 120vh;
-        view-timeline: --buffer;
-    }
+  .spacer {
+    height: 100vh;
+    margin-top: 120vh;
+    view-timeline: --buffer;
+  }
 
-    /* video {
-        --to: 0;
-        translate: 0 50%;
+  @keyframes shrink {
+    1% {
+      background: white;
     }
-
-    header {
-        --to: -100%;
+    2% {
+      scale: 50;
+      background: white;
+      /* opacity: 100; */
     }
-    video {
-        --to: 0;
-        translate: 0 50%;
-    } */
-
-    .video-mask .svg-wrap,
-    .video-mask h1 {
-        background-color: black;
-        scale: var(--scale, 100);
-        animation: shrink both linear;
-        transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
-        animation-timeline: --buffer;
-        animation-range: entry;
+    20% {
+      scale: 20;
+      background: white;
     }
-
-    @keyframes shrink {
-        1% {
-            background: white;
-        }
-        2% {
-            scale: 50;
-            background: white;
-            /* opacity: 100; */
-        }
-        20% {
-            scale: 20;
-            background: white;
-        }
-        50% {
-            scale: 10;
-            background: white;
-        }
-        70% {
-            scale: 5;
-            background: white;
-        }
-        80% {
-            scale: 3;
-            background: white;
-        }
-        to {
-            scale: 1;
-            background: white;
-        }
+    50% {
+      scale: 10;
+      background: white;
     }
+    70% {
+      scale: 5;
+      background: white;
+    }
+    80% {
+      scale: 3;
+      background: white;
+    }
+    to {
+      scale: 1;
+      background: white;
+    }
+  }
 
-    /* @property --active {
+  .video-mask .svg-wrap,
+  .video-mask h1 {
+    background-color: black;
+    scale: var(--scale, 100);
+    animation: shrink both linear;
+    transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
+    animation-timeline: --buffer;
+    animation-range: entry;
+  }
+
+  /* @property --active {
         inherits: true;
         initial-value: 0;
         syntax: "<number>";
@@ -69,7 +56,7 @@
         view-timeline: --outro;
     } */
 
-    /* .follow h2 span {
+  /* .follow h2 span {
         opacity: calc(0.25 + (var(--active) / 100));
         animation: activate both
             linear(
@@ -97,20 +84,20 @@
         animation-timeline: --outro;
     } */
 
-    /* @keyframes activate {
+  /* @keyframes activate {
         to {
             --active: 100;
         }
     } */
 
-    /* .follow h2 span:first-of-type {
+  /* .follow h2 span:first-of-type {
         animation-range: entry 0% entry 50%;
     }
     .follow h2 span:last-of-type {
         animation-range: entry 50% entry 100%;
     } */
 
-    /* .content > div {
+  /* .content > div {
         --to: 0;
 
         translate: 0 0.25lh;

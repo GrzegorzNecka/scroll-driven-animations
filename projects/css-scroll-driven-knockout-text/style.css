@@ -1,19 +1,19 @@
 @import "./_base.css";
-@import "./_animations.css";
 @import "./_demo.css";
+/* animations */
+@import "./_logo-scale.css";
+@import "_rectangle.css";
 @import "./_columns.css";
 
-@layer base, demo, animation, columns;
-
 :root {
-    timeline-scope: --buffer, --reverse-columns;
+  timeline-scope: --buffer, --reverse-columns, --mural-rectangle;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 div.tp-dfwv {
-    position: fixed;
-    z-index: 99999;
-    width: 280px;
+  position: fixed;
+  z-index: 99999;
+  width: 280px;
 }

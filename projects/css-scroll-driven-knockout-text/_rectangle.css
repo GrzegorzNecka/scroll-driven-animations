@@ -1,0 +1,62 @@
+.mural-container {
+  position: sticky;
+  inset: 0;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.mural-container img {
+  width: 100vw;
+  object-fit: cover;
+}
+.mural-mask {
+  height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 2;
+
+  /* background-color: white; */
+  color: black;
+  mix-blend-mode: lighten;
+  display: grid;
+  place-items: center;
+
+  inset: 0;
+  overflow: hidden;
+}
+
+.mural-mask span {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: red;
+  /* background: black; */
+
+  /* scale: var(--scale, 100); */
+  animation: rectangle-mask-shrink both linear;
+  transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
+  animation-timeline: --mural-rectangle;
+  animation-range: entry;
+}
+
+@keyframes rectangle-mask-shrink {
+  1% {
+    /* background: white; */
+  }
+
+  to {
+    /* background: red; */
+  }
+}
+
+.mural-spacer {
+  height: 100vh;
+  margin-top: 120vh;
+  view-timeline: --mural-rectangle;
+}
