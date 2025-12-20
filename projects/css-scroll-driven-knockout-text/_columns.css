@@ -21,6 +21,17 @@
     color: black;
   }
 
+  .column h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .column p {
+    font-weight: 100;
+    font-size: 0.9rem;
+  }
+
   .column__item {
     position: relative;
     overflow: clip;
@@ -28,7 +39,7 @@
   }
 
   .column__item-imgwrap {
-    aspect-ratio: 1 / 1.2;
+    aspect-ratio: 1 / 1;
     overflow: clip;
   }
 
