@@ -18,10 +18,7 @@
       scale: 20;
       background: white;
     }
-    50% {
-      scale: 10;
-      background: white;
-    }
+
     70% {
       scale: 5;
       background: white;
