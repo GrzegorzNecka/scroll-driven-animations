@@ -61,8 +61,8 @@ img.logo-bg {
 
 @layer animation {
   .logo-spacer {
-    height: 100vh;
-    margin-top: 120vh;
+    height: 200vh;
+    margin-top: 20vh;
     view-timeline: --buffer;
   }
 
@@ -73,19 +73,9 @@ img.logo-bg {
     2% {
       scale: 50;
       background: white;
-      /* opacity: 100; */
-    }
-    20% {
-      scale: 20;
-      background: white;
-    }
-
-    70% {
-      scale: 5;
-      background: white;
     }
     80% {
-      scale: 3;
+      scale: 1;
       background: white;
     }
     to {
@@ -98,7 +88,7 @@ img.logo-bg {
   .mural-logo-mask span {
     background-color: black;
     /* background-color: white; */
-    scale: var(--scale, 100);
+    scale: 100;
     animation: shrink both linear;
     transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
     animation-timeline: --buffer;
