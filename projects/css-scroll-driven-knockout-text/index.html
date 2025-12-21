@@ -15,18 +15,30 @@
         <h2 class="fluid">Scroll-driven text knockout</h2>
       </header>
       <main>
-        <div class="video-timeline">
-          <!-- Video sits in the background stuck-->
-          <div class="video-container fluid">
-            <!-- <video src="https://assets.codepen.io/605876/solo-skater--opt.mp4" loop autoplay muted></video> -->
+        <section class="mural-timeline">
+          <div class="mural-container">
             <img
               src="assets/mural-scaled-1.jpg"
               alt="Mural - Mayan art scene"
-              class="video-replacement"
+              class="mural-image"
+            />
+            <div class="mural-mask">
+              <span></span>
+            </div>
+          </div>
+          <div class="mural-spacer"></div>
+        </section>
+
+        <section class="mural-logo-timeline">
+          <div class="mural-logo-container">
+            <img
+              src="assets/mural-scaled-1.jpg"
+              alt="Mural - Mayan art scene"
+              class="logo-bg"
             />
 
-            <section class="video-mask fluid">
-              <h1 class="fluid">
+            <div class="mural-logo-mask">
+              <span>
                 <svg
                   width="262"
                   height="221"
@@ -94,32 +106,12 @@
                   ></path>
                   <desc>prawdziwe kakao ceremonialne</desc>
                 </svg>
-                <span
-                  data-gramm="false"
-                  data-gramm_editor="false"
-                  data-enable-grammarly="false"
-                  contenteditable="true"
-                ></span>
-              </h1>
-            </section>
-          </div>
-          <section class="spacer"></section>
-        </div>
-        <!-- Then your extra content follows afterwards... -->
-
-        <section class="mural-timeline">
-          <div class="mural-container">
-            <img
-              src="assets/mural-scaled-1.jpg"
-              alt="Mural - Mayan art scene"
-              class="mural-image"
-            />
-            <div class="mural-mask">
-              <span></span>
+              </span>
             </div>
           </div>
-          <div class="mural-spacer"></div>
+          <div class="logo-spacer"></div>
         </section>
+        <!-- Then your extra content follows afterwards... -->
 
         <section class="columns">
           <div class="column column-reverse">

@@ -44,63 +44,17 @@
     color: black;
   }
 
-  .svg-filter {
+  /* .svg-filter {
     width: 0;
     height: 0;
     position: absolute;
-  }
+  } */
 
-  [contenteditable]:focus-visible {
+  /* [contenteditable]:focus-visible {
     outline-color: red;
-  }
+  } */
 
   /* Video layout stuff */
-
-  .video-container {
-    --font-level: var(--font, 10);
-    position: sticky;
-    inset: 0;
-    height: 100vh;
-    background: white;
-
-    display: flex;
-    align-items: center;
-  }
-
-  .video-mask {
-    height: 100vh;
-
-    width: 100vw;
-    position: absolute;
-    z-index: 2;
-    background: black;
-    /* background-color: white; */
-    color: black;
-    mix-blend-mode: lighten;
-    display: grid;
-    place-items: center;
-
-    inset: 0;
-    overflow: hidden;
-  }
-
-  img.video-replacement {
-    width: 100vw;
-
-    object-fit: cover;
-  }
-
-  .video-mask h1 {
-    display: flex;
-    text-align: center;
-    margin: 0;
-    anchor-name: --head;
-    align-items: center;
-  }
-
-  .video-mask h1 svg {
-    width: 2ch;
-  }
 
   footer {
     padding: 2rem;
