@@ -36,6 +36,7 @@
   .video-mask .svg-wrap,
   .video-mask h1 {
     background-color: black;
+    /* background-color: white; */
     scale: var(--scale, 100);
     animation: shrink both linear;
     transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);

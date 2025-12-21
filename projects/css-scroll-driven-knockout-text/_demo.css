@@ -74,7 +74,7 @@
     position: absolute;
     z-index: 2;
     background: black;
-    background-color: white;
+    /* background-color: white; */
     color: black;
     mix-blend-mode: lighten;
     display: grid;
