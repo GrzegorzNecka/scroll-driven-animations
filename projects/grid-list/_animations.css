@@ -1,0 +1,30 @@
+/* ### Grid List Animation with fixed animation range */
+
+@keyframes animate-in {
+  from {
+    opacity: 0;
+    scale: 0.7;
+    translate: 0 20%;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}
+
+.photo {
+  animation: animate-in ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0px entry 250px;
+  transform-origin: 50% 100%;
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: view()) {
+  .photo {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+}

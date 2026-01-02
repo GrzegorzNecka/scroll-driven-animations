@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CSS Scroll-driven Animations: Stacking Cards - karty stackujące się podczas scrollowania"
+    />
+    <title>Stacking Cards</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="warning">
+      <p>
+        ⚠️ Twoja przeglądarka nie wspiera Scroll-driven Animations. Użyj Chrome
+        115+ lub nowszej.
+      </p>
+    </div>
+
+    <header>
+      <div>
+        <h1>Stacking Cards</h1>
+        <p>👇 Przewiń w dół, aby zobaczyć efekt.</p>
+      </div>
+    </header>
+
+    <main>
+      <ul id="cards">
+        <li class="card" id="card_1" style="--index: 1">
+          <div class="card__content">
+            <div>
+              <h2>Karta Pierwsza</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                perferendis molestiae non nemo doloribus. Doloremque, nihil! At
+                ea atque quidem!
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="card" id="card_2" style="--index: 2">
+          <div class="card__content">
+            <div>
+              <h2>Karta Druga</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                perferendis molestiae non nemo doloribus. Doloremque, nihil! At
+                ea atque quidem!
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="card" id="card_3" style="--index: 3">
+          <div class="card__content">
+            <div>
+              <h2>Karta Trzecia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                perferendis molestiae non nemo doloribus. Doloremque, nihil! At
+                ea atque quidem!
+              </p>
+            </div>
+          </div>
+        </li>
+        <li class="card" id="card_4" style="--index: 4">
+          <div class="card__content">
+            <div>
+              <h2>Karta Czwarta</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                perferendis molestiae non nemo doloribus. Doloremque, nihil! At
+                ea atque quidem!
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <aside>
+      <h2>O animacji Stacking Cards</h2>
+      <p>
+        W tej demonstracji karty na górze stackują się jedna na drugiej. Kiedy
+        karta jest przyklejona, skaluje się w dół, aby następna karta mogła
+        stackować się na niej.
+      </p>
+
+      <p>
+        Aby karty pozostawały przyklejone, używane jest
+        <code>position: sticky</code>. Kluczowe jest to, że ta właściwość nie
+        jest zastosowana bezpośrednio na kartach (<code>.card</code>), ale na
+        wewnętrznym elemencie <code>.card__content</code>.
+      </p>
+
+      <p>
+        Jeśli chodzi o animację, kluczową częścią jest to, że element
+        opakowujący
+        <code>#cards</code> jest śledzony na zakresie
+        <code>exit-crossing</code>.
+      </p>
+
+      <p>
+        Zawartość każdej karty (<code>.card__content</code>) jest animowana i
+        przypisana do części tego zakresu. Ponieważ demo zawiera
+        <code>4</code> karty, każda karta powinna być animowana na
+        <code>25%</code> zakresu. Jest to obliczane przy użyciu niestandardowych
+        właściwości <code>--numcards</code> i <code>--index</code>.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem repellat
+        non ratione eum provident quaerat obcaecati dicta autem voluptates sit
+        cum quis distinctio, atque sint commodi reprehenderit perspiciatis iure
+        velit molestiae eos molestias ipsa nihil quia? Porro tempore in fugit,
+        aspernatur et temporibus aliquam magnam adipisci deleniti dicta repellat
+        alias nostrum impedit quidem odit excepturi nam.
+      </p>
+
+      <p>
+        Nam pulvinar congue condimentum. Pellentesque fringilla ante sed massa
+        tincidunt feugiat. Nulla bibendum est eros, non malesuada dolor vehicula
+        in. Morbi eu cursus arcu. Phasellus ultricies ornare lorem, non interdum
+        orci condimentum eu. Donec condimentum condimentum ligula ut placerat.
+      </p>
+
+      <p>
+        Curabitur ultrices fringilla libero sit amet porta. Nulla rhoncus
+        venenatis euismod. Praesent non interdum sem. Nunc in nibh tincidunt,
+        faucibus sem at, finibus turpis. Nullam vel odio blandit, tincidunt urna
+        et, luctus lectus. Vivamus porta sem vitae turpis interdum porta eu id
+        ligula.
+      </p>
+
+      <p>
+        Aenean ac pellentesque ante. In hac habitasse platea dictumst. Nullam
+        efficitur, dolor ac pharetra iaculis, sem elit maximus ex, et malesuada
+        est ipsum tempor nisi. Phasellus auctor et turpis ultrices fermentum.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+        perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque
+        quidem! Itaque numquam unde quae dignissimos exercitationem placeat,
+        ipsa amet tempora vitae ullam animi!
+      </p>
+    </aside>
+  </body>
+  <script src="script.js"></script>
+</html>

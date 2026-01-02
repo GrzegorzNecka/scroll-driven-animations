@@ -1,0 +1,37 @@
+/* ### Text Reveal Animation with scroll() timeline */
+
+@supports (animation-timeline: scroll()) {
+  span {
+    background:
+      /* Highlight text */ linear-gradient(90deg, #ffd700 0 0) 0 /
+      calc(var(--n, 100) * 1ch) no-repeat
+      /* Faded text */ rgba(255, 255, 255, 0.3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: text 0.1s steps(var(--n, 100)) forwards;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes text {
+    0% {
+      background-size: 0;
+    }
+    100% {
+      background-size: calc(var(--n, 100) * 1ch);
+    }
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: scroll()) {
+  span {
+    background: linear-gradient(90deg, #ffd700 0 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
